@@ -32,6 +32,6 @@ def bwt_from_suffix_array(suffix_array, string):
     return bwt
 
 
-# print(naive_suffix_array2('googol$'))
+print(naive_suffix_array2('banana$'))
 # print(bwt_from_suffix_array(naive_suffix_array2('googol$'), 'googol$'))
-# print(bwt_from_suffix_array(naive_suffix_array2('banana$'), 'banana$'))
+print(bwt_from_suffix_array(naive_suffix_array2('banana$'), 'banana$'))
