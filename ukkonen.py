@@ -1,6 +1,3 @@
-# Author: Zachary Huggins
-# ID: 30577012
-
 class LeafNode:
     # Leaf of tree, has no set last char due to it always being the global end
     def __init__(self, start_char, char, suffix_label, parent):
@@ -48,7 +45,6 @@ class EdgeLink:
 
 
 class Node:
-
     suffix_link = None
 
     def __init__(self):
@@ -86,9 +82,9 @@ def ukkonen(aString):
 
     for i in range(strLen):  # For loop == phases
         currChar = aString[i]
-        for j in range(last_j + 1, i+1): # For loop for extension from last j to i
+        for j in range(last_j + 1, i + 1):  # For loop for extension from last j to i
             currEdge = active_node[aString[remainder_start]]
-            # utlising inbuilt get item function
+            # utilising inbuilt get item function
             # current edge can be a leaf or an edge
 
             if currEdge:
@@ -100,7 +96,7 @@ def ukkonen(aString):
                         if not currEdge or type(currEdge) is not EdgeLink:
                             break
 
-            # active node is above extension point, then move to extension point if there is an curr_edge
+            # active node is above extension point, then move to extension point if there is a curr_edge
             if currEdge:
                 ext_point = currEdge.start_idx + remainderLen()
 
@@ -152,3 +148,19 @@ def ukkonen(aString):
 
     # return root, since all nodes can be accessed from the root
     return treeRoot
+
+
+def st_to_sa(node, suffix_array):
+    n = len(node.child_array)
+    for i in range(n):
+        tree_object = node.child_array[i]
+        if tree_object is not None:
+            if type(tree_object) == LeafNode:
+                suffix_array.append(tree_object.character)
+            if type(tree_object) == EdgeLink:
+                st_to_sa(tree_object.child_link, suffix_array)
+    return suffix_array
+
+
+st = ukkonen('abcab$')
+print(st_to_sa(st, []))
