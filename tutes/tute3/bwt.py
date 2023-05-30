@@ -32,6 +32,7 @@ def bwt_from_suffix_array(suffix_array, string):
     return bwt
 
 
+<<<<<<< HEAD:tutes/tute3/bwt.py
 def invert_bwt(bwt):
     n = len(bwt)
     alphabet = [0 for _ in range(36, 127)]
@@ -61,5 +62,8 @@ print(invert_bwt('annb$aa'))
 print(invert_bwt('lo$oogg'))
 
 # print(naive_suffix_array2('banana$'))
+=======
+print(naive_suffix_array2('banana$'))
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c:tute3/bwt.py
 # print(bwt_from_suffix_array(naive_suffix_array2('googol$'), 'googol$'))
-# print(bwt_from_suffix_array(naive_suffix_array2('banana$'), 'banana$'))
+print(bwt_from_suffix_array(naive_suffix_array2('banana$'), 'banana$'))

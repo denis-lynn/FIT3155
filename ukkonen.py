@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+# Author: Zachary Huggins
+# ID: 30577012
+
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c
 class LeafNode:
     # Leaf of tree, has no set last char due to it always being the global end
     def __init__(self, start_char, char, suffix_label, parent):
@@ -45,6 +51,10 @@ class EdgeLink:
 
 
 class Node:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c
     suffix_link = None
 
     def __init__(self):
@@ -82,9 +92,15 @@ def ukkonen(aString):
 
     for i in range(strLen):  # For loop == phases
         currChar = aString[i]
+<<<<<<< HEAD
         for j in range(last_j + 1, i + 1):  # For loop for extension from last j to i
             currEdge = active_node[aString[remainder_start]]
             # utilising inbuilt get item function
+=======
+        for j in range(last_j + 1, i+1): # For loop for extension from last j to i
+            currEdge = active_node[aString[remainder_start]]
+            # utlising inbuilt get item function
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c
             # current edge can be a leaf or an edge
 
             if currEdge:
@@ -96,7 +112,11 @@ def ukkonen(aString):
                         if not currEdge or type(currEdge) is not EdgeLink:
                             break
 
+<<<<<<< HEAD
             # active node is above extension point, then move to extension point if there is a curr_edge
+=======
+            # active node is above extension point, then move to extension point if there is an curr_edge
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c
             if currEdge:
                 ext_point = currEdge.start_idx + remainderLen()
 
@@ -148,6 +168,7 @@ def ukkonen(aString):
 
     # return root, since all nodes can be accessed from the root
     return treeRoot
+<<<<<<< HEAD
 
 
 def st_to_sa(node, suffix_array):
@@ -164,3 +185,5 @@ def st_to_sa(node, suffix_array):
 
 st = ukkonen('abcab$')
 print(st_to_sa(st, []))
+=======
+>>>>>>> 461920891b952182a57a7b7238e7dd9e2363311c
